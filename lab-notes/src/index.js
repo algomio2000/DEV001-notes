@@ -4,19 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter,RouterProvider} from "react-ruoter-dom";
-
+import Create from './components/Create';
+import SingInn from './components/SingInn';
+import WallNotes from './components/WallNotes';
 const router = createBrowserRouter(
   {
     path:"/",
-    element:<h1>SingInn</h1>
+    element:<SingInn></SingInn>
   },
   {
     path:"/Create",
-    element:<h1>Create</h1>
+    element: <Create></Create>,
   },
   {
     path:"/WallNotes",
-    element:<h1>WallNotes</h1>
+    element:<WallNotes></WallNotes>
   }
 );
 const root = ReactDOM.createRoot(document.getElementById('root'));
