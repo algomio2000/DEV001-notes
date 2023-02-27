@@ -1,27 +1,8 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getAuth } from "firebase/auth";
-import {
-    getStorage,
-    ref,
-    uploadBytes,
-    getDowunLoadURL,
-    getBytes,
-} from "firebase/storage";
-import {
-    getFirestone,
-    collection,
-    addDoc,
-    getDocs,
-    getDoc,
-    doc,
-    query,
-    where,
-    SetDoc,
-    deleteDoc,
-    getFirestore,
-} from "firebase/firestore";
+
+import { initializeApp } from "firebase/app"
+import { getAuth } from "firebase/auth"
+import { getFirestore} from "@firebase/firestore"
 const firebaseConfig = {
     apiKey: "AIzaSyDhunNjDtKvadxMTRTvLKaa5X3_o5acCKk",
     authDomain: "organize-me-80083.firebaseapp.com",
@@ -34,8 +15,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
-export const analytics = getAnalytics(app);
-export const auth = getAuth(app);
 export const db = getFirestore(app);
-export const storage = getStorage(app);
+export const auth = getAuth(app);
+
 

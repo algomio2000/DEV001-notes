@@ -1,4 +1,4 @@
-import { async } from "@firebase/util";
+//import { async } from "@firebase/util";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase/firebase.js";
 
@@ -17,6 +17,7 @@ export default function SingIn() {
     }
 
     return (<div>
+  
         <button onClick={handleOnClick}>Login with google</button>
     </div>);
-};
+}

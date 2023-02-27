@@ -1,20 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-import SingIn from './routes/SingIn';
+import SignIn from './routes/SignIn';
 import WallNotes from './routes/WallNotes';
 import Create from './routes/Create';
+import Note from './src/components/Note';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 ReactDOM.render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<SingIn />} />
+      <Route path="/" element={<SignIn />} />
       <Route path="/Create" element={<Create />} />
       <Route path="/WallNotes" element={<WallNotes />} />
+      <Route path="/Note" element={<Note />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')
