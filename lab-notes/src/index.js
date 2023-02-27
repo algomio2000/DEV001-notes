@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignIn from './routes/SignIn';
 import WallNotes from './routes/WallNotes';
 import Create from './routes/Create';
-import Note from './src/components/Note';
+import Note from './components/Note';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 ReactDOM.render(

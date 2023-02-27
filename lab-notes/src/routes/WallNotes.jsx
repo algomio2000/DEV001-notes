@@ -1,12 +1,12 @@
 
-import React, { useState } from 'react'
-/*import { useNavigate } from 'react-router-dom'
-import { collection, addDoc } from 'firebase/firestore'
-import { db } from '../firebase/firebase'
-import { Card } from 'react-bootstrap/Card';*/
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../firebase/firebase';
+import { Card } from 'react-bootstrap';
 
-export default function WallNotes() { <h1>holA</h1>}
-    /*const [description, setDescription] = useState('')
+export default function WallNotes() {
+    const [description, setDescription] = useState('')
     const [stock, setStock] = useState(0)
     const navigate = useNavigate()
 
@@ -20,7 +20,7 @@ export default function WallNotes() { <h1>holA</h1>}
     }
 
     return (
-        //function TextExample() {
+        function TextExample() {
         //return (
         <Card style={{ width: '18rem' }}>
             <Card.Body>
@@ -34,9 +34,9 @@ export default function WallNotes() { <h1>holA</h1>}
                 <Card.Link href="#">Another Link</Card.Link>
             </Card.Body>
         </Card>
-    );
-}*/
-    //)}
+ } );
+}
+   
 
 
 /*<div className='container'>
