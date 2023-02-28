@@ -2,8 +2,26 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
-import {render} from 'react-dom';
+
+import { useNavigate } from 'react-router-dom';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../firebase/firebase';
+
+
+
 export default function Note() {
+  const [title, setDescription] = useState('')
+  const [note, setStock] = useState('')
+  const navigate = useNavigate()
+
+  const notes = collection(db, "notes")
+
+  const store = async (e) => {
+      e.preventDefault()
+      await addDoc(notes, { note: "", title: "" })
+      navigate('/WallNotes')
+      //console.log(e.target[0].value)
+  }
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -21,16 +39,22 @@ export default function Note() {
         </Modal.Header>
         <Modal.Body>
           <Form>
-        
+
             <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea2"
-            >
+            //className="mb-3"
+              //controlId="exampleForm.ControlTextarea2"
+            
+                        value={title}
+                        onChange={(e) => setDescription(e.target.value)}
+                        type="text"
+                        className='form-control'
+                    >
+          
               <Form.Label>Example textarea</Form.Label>
               <Form.Control as="textarea" rows={3} />
             </Form.Group>
-              
-          
+
+
             <Form.Group
               className="mb-3"
               controlId="exampleForm.ControlTextarea1"
