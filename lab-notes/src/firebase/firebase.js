@@ -2,7 +2,7 @@
 
 import { initializeApp } from "firebase/app"
 import { getAuth } from "firebase/auth"
-import { getFirestore,getDoc,getDocs, deleteDoc, doc} from "@firebase/firestore"
+import { getFirestore} from "@firebase/firestore"
 const firebaseConfig = {
     apiKey: "AIzaSyDhunNjDtKvadxMTRTvLKaa5X3_o5acCKk",
     authDomain: "organize-me-80083.firebaseapp.com",
@@ -17,6 +17,9 @@ const firebaseConfig = {
 export const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
 export const auth = getAuth(app);
-export const getDoc= getDoc(app);                                         
-
+/*export const getDoc= getDoc(app);   
+export const getDocs= getDocs(app);
+export  const doc = doc(app);
+export const deleteDoc = deleteDoc(app);                                   
+export const collection = collection(app);*/
 
