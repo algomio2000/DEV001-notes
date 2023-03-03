@@ -1,79 +1,61 @@
-//import { async } from "@firebase/util";
+
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase/firebase.js";
-import logo from "./calendario.png";
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import { useState } from "react";
+import google from "./logoGoogle.png"
+import logo from "./calendario.png"
 
-export default function SignIn () {
-  const { registro, setRegistro} = useState(false);
+export default function SingIn() {
+  async function handleOnClick() {
+    const googleProvider = new GoogleAuthProvider();
+    await signInWhiteGoogle(googleProvider);
+  }
+  async function signInWhiteGoogle(googleProvider) {
+    try {
+      const res = await signInWithPopup(auth, googleProvider);
+      console.log(res);
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
-
-  
   return (
-    <div className="row container p-4">
-      <div className="col-md-8">
-        <div>
-          <img className="logo" src={logo} alt="" />
+    <div className="contenedor">
+      <div className="container1">
+        <div className="encabezado">
+          <img
+            className="logo"
+            src={logo}
+            alt="calendarDay" />
+             </div>
+            <div className="title">
+            <h1>ORGANIZE ME</h1>
+          
         </div>
-
-      </div>
-      {/*en esta section es el formulario*/}
-      <div className="col-md-4">
-        <div className="mt-5 ms-5">
-        </div>
+       
         
+        <div className="subtitle" >
+          <h2 >Organizate para cumplir tus sueños</h2>
+        </div>
+      </div>
+      <div className="container2">
+        <h1>BIENVENIDO</h1>
+        <h2>Inicia sesion</h2>
+        <button className="btn" onClick={handleOnClick}>
 
-
-    <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
-  
+          <img
+            className="googleIcon"
+            src={google}
+            alt="google logo"
+          />
+        </button>
 
 
       </div>
     </div>
 
 
-    
+
+
+
   );
-}
-
-
-/*async function handleOnClick() {
-      const googleProvider = new GoogleAuthProvider();
-      await signInWhiteGoogle(googleProvider);
-  }
-  async function signInWhiteGoogle(googleProvider) {
-      try {
-          const res = await signInWithPopup(auth, googleProvider);
-          console.log(res);
-      } catch (error) {
-          console.error(error);
-      }
-  }*/
-/* <h1 className="welcome">Welcome to</h1>
-     <h1>ORGANIZE ME</h1>
-     <h1 className="mainTitle">organizate para cumplir tus sueños</h1>
-     <button className="btn" onClick={handleOnClick}>
-       Signin with
-       
-     </button>*/
+};

@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+/*import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../firebase/firebase';
@@ -17,9 +17,9 @@ export default function WallNotes() {
         await addDoc(notes, { note: "", title: "" })
         navigate('/WallNotes')
         //console.log(e.target[0].value)
-    }
+    }*/
 
-    return (
+    /*return (
         function TextExample() {
         //return (
         <Card style={{ width: '18rem' }}>
@@ -35,7 +35,7 @@ export default function WallNotes() {
             </Card.Body>
         </Card>
  } );
-}
+}*/
    
 
 
