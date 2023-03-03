@@ -1,4 +1,34 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react'
+import { Link } from 'react-router-dom'
+import { collection,getDocs, getDoc, deleteDoc, doc } from 'firebase/firestore'
+import { db } from '../firebase/firebase'
+import { async } from '@firebase/util'
+const Note = () => {                             
+  //configurar los hooks
+  const [notes, setNotes] = useState([])
+  //referenciar los documentos de firestone
+  const publiNotas = collection(db,"notes")
+  //funcion para mostrar todos los documentos
+  const getNotes = async() => {
+    const data = await getDocs(publiNotas)
+
+    //console.log(data.docs)
+    setNotes(data.docs.map((doc)=> ({...doc.data(),id:doc.id}))
+    )
+console.log(notes) 
+  }
+  //funcion para eliminar un doc
+  //usar useeffect
+  useEffect( () =>{getNotes()}, [])
+  //devolvemos la vista de nuestro componente
+  return (
+    <div>Note</div>
+  )
+}
+
+export default Note
+
+/*import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
@@ -77,4 +107,4 @@ export default function Note() {
   );
 }
 
-//render(<Note />);
+//render(<Note />);*/
