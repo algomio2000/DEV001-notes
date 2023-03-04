@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { collection, getDocs, getDoc, deleteDoc, doc } from "@firebase/firestore"
 import { db } from '../firebase/firebase'
-import { async } from '@firebase/util'
-import { Card } from 'react-bootstrap';
+//import { ModalShow} from './components/ModalShow'
 
 
 
@@ -30,25 +29,50 @@ const Note = () => {
   //usar useeffect
   useEffect(() => { getNotes() }, [])
   //devolvemos la vista de nuestro componente
- return (
+  return (
+    <>
+      <div className='container'>
+        <div className='row'>
+          <div className='col'>
+            <div className='d-grid gap-2'>
+              <Link to="/ModalShow" className='btn btn-secondary mt-2 mb-2'>publicar</Link>
+            </div>
+            <table className='table table-dark table-hover'>
+              <thead>
+                <tr>
+                  <th> title</th>
+                  <th>note</th>
+                  <th>Actions</th>
 
-   
-    <div className='contenedor'>
-    <Card style={{ width: '18rem' }}>
-      <Card.Body>
-        <Card.Title>title</Card.Title>
-        
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <button type='submit' className='btn btn-primary'>Edit</button>
-        <button type='submit' className=' m-5 btn btn-primary'>check</button>
-      </Card.Body>
-    </Card>
-    </div>
+                </tr>
+              </thead>
+              <tbody>
+                {notes.map((note) => (
+                  <tr key={note.id}>
+                    <td>{note.title}</td>
+                    <td>{note.note}</td>
+                    <td>
+                      <Link to={`/Modal/${note.id}`} className= "btn btn-ligth"><i className="fa-regular fa-pen-to-square"></i></Link>
+                      <button onClick={ () =>{deleteNote(note.id)} } className= "btn btn-danger"><i className="fa-solid fa-circle-check"></i></button>
+                    </td>
 
-);
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+
+
+    </>
+  );
 }
 
 export default Note

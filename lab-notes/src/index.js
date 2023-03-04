@@ -9,6 +9,7 @@ import WallNotes from './routes/WallNotes';
 import Create from './routes/Create';
 import Note from './components/Note';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import  ModalShow  from './components/ModalShow';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -17,6 +18,7 @@ ReactDOM.render(
       <Route path="/Create" element={<Create />} />
       <Route path="/WallNotes" element={<WallNotes />} />
       <Route path="/Note" element={<Note />} />
+      <Route path="/ModalShow" element={<ModalShow />} />
     </Routes>
   </BrowserRouter>,
   document.getElementById('root')
