@@ -17,6 +17,9 @@ export default function ModalShow() {
     await addDoc(publicaciones, { title: title, note: note })
     navigate('/Note')
   }
+
+  
+  //console.log(publicaciones);
   return (
     <div className='container'>
       <div className='row'>
@@ -24,22 +27,22 @@ export default function ModalShow() {
           <h1>Agregar Nota</h1>
           <form onSubmit={noteCollection}>
             <div className='mb-3'>
-              <label className='form-label'>Title</label>
-              <imput
+              <label className='form-label' >Title</label>
+              <input
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
                 type="text"
-                className='form-control' />
+                className='form-control' id='input1' />
 
             </div>
             <div className='mb-3'>
             
               <label className='form-label'>Nota</label>
-              <imput
+              <input
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
                 type="text"
-                className='form-control' />
+                className='form-control' id = 'input2' />
 
             </div>
             <button type='submit' className= 'btn btn-primary'>publicar</button>
