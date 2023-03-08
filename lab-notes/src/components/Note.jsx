@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { collection, getDocs, getDoc, deleteDoc, doc } from "@firebase/firestore"
 import { db } from '../firebase/firebase'
-//import { ModalShow} from './components/ModalShow'
 
 
 
@@ -31,7 +30,7 @@ const Note = () => {
   //devolvemos la vista de nuestro componente
   return (
     <>
-    <div className='container'>
+      <div className='container'>
         <div className='row'>
           <div className='col'>
             <div className='d-grid gap-2'>
@@ -51,8 +50,8 @@ const Note = () => {
                     <td>{note.title}</td>
                     <td>{note.note}</td>
                     <td>
-                      <Link to={`/Edit/${note.id}`} className= "btn btn-primary">Edit</Link>
-                      <button onClick={ () =>{deleteNote(note.id)} } className= "btn btn-primary">Delete</button>
+                      <Link to={`/Edit/${note.id}`} className="btn btn-primary">Edit</Link>
+                      <button onClick={() => { deleteNote(note.id) }} className="btn btn-primary">Delete</button>
                     </td>
                   </tr>
                 ))

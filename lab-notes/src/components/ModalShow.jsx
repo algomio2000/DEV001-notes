@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Modal from 'react-bootstrap/Modal';
 import { collection, addDoc } from "@firebase/firestore"
 import { db } from '../firebase/firebase'
 import { useNavigate } from 'react-router-dom';
@@ -18,7 +15,7 @@ export default function ModalShow() {
     navigate('/Note')
   }
 
-  
+
   //console.log(publicaciones);
   return (
     <div className='container'>
@@ -36,16 +33,16 @@ export default function ModalShow() {
 
             </div>
             <div className='mb-3'>
-            
+
               <label className='form-label'>Nota</label>
               <input
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
                 type="text"
-                className='form-control' id = 'input2' />
+                className='form-control' id='input2' />
 
             </div>
-            <button type='submit' className= 'btn btn-primary'>publicar</button>
+            <button type='submit' className='btn btn-primary'>publicar</button>
 
           </form>
 
@@ -58,4 +55,3 @@ export default function ModalShow() {
 
 }
 
-//render(<Example />);

@@ -1,4 +1,3 @@
-import { async } from "@firebase/util"
 import { useEffect, useState } from "react"
 import { Form, useNavigate, useParams } from "react-router-dom"
 import { db } from "../firebase/firebase"
