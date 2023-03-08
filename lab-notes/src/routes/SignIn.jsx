@@ -3,12 +3,14 @@ import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "../firebase/firebase.js";
 import google from "./logoGoogle.png"
 import logo from "./calendario.png"
+import { useNavigate } from 'react-router-dom';
 
 export default function SingIn() {
   async function handleOnClick() {
     const googleProvider = new GoogleAuthProvider();
     await signInWhiteGoogle(googleProvider);
   }
+  const navigate = useNavigate()
   async function signInWhiteGoogle(googleProvider) {
     try {
       const res = await signInWithPopup(auth, googleProvider);
@@ -16,6 +18,7 @@ export default function SingIn() {
     } catch (error) {
       console.error(error);
     }
+    navigate('/Note')
   }
 
   return (
@@ -40,6 +43,7 @@ export default function SingIn() {
       <div className="container2">
         <h1>BIENVENIDO</h1>
         <h2>Inicia sesion</h2>
+       
         <button className="btn" onClick={handleOnClick}>
 
           <img

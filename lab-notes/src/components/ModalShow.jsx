@@ -14,7 +14,7 @@ export default function ModalShow() {
   const noteCollection = collection(db, "notes")
   const publicaciones = async (e) => {
     e.preventDefault()
-    await addDoc(publicaciones, { title: title, note: note })
+    await addDoc(noteCollection, { title: title, note: note })
     navigate('/Note')
   }
 
@@ -25,7 +25,7 @@ export default function ModalShow() {
       <div className='row'>
         <div className='col'>
           <h1>Agregar Nota</h1>
-          <form onSubmit={noteCollection}>
+          <form onSubmit={publicaciones}>
             <div className='mb-3'>
               <label className='form-label' >Title</label>
               <input

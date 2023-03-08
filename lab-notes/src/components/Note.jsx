@@ -31,7 +31,7 @@ const Note = () => {
   //devolvemos la vista de nuestro componente
   return (
     <>
-      <div className='container'>
+      {/*<div className='container'>
         <div className='row'>
           <div className='col'>
             <div className='d-grid gap-2'>
@@ -40,8 +40,8 @@ const Note = () => {
             <table className='table table-dark table-hover'>
               <thead>
                 <tr>
-                  <th> title</th>
-                  <th>note</th>
+                  <th>Title</th>
+                  <th>Note</th>
                   <th>Actions</th>
 
                 </tr>
@@ -52,12 +52,13 @@ const Note = () => {
                     <td>{note.title}</td>
                     <td>{note.note}</td>
                     <td>
-                      <Link to={`/Modal/${note.id}`} className= "btn btn-ligth"><i className="fa-regular fa-pen-to-square"></i></Link>
-                      <button onClick={ () =>{deleteNote(note.id)} } className= "btn btn-danger"><i className="fa-solid fa-circle-check"></i></button>
+                      <Link to={`/Edit/${note.id}`} className= "btn btn-primary">Edit</Link>
+                      <button onClick={ () =>{deleteNote(note.id)} } className= "btn btn-primary">Delete</button>
                     </td>
 
                   </tr>
-                ))}
+                ))
+                }
               </tbody>
             </table>
 
@@ -65,8 +66,26 @@ const Note = () => {
 
         </div>
 
-      </div>
+      </div>*/}
+      <div className="card text-center mb-3" style="width: 18rem;">
+  <div className="card-body">
+  {notes.map((note) => (
+                  <tr key={note.id}>
+                    <td>{note.title}</td>
+                    <td>{note.note}</td>
+                    <td>
+                      <Link to={`/Edit/${note.id}`} className= "btn btn-primary">Edit</Link>
+                      <button onClick={ () =>{deleteNote(note.id)} } className= "btn btn-primary">Delete</button>
+                    </td>
 
+                  </tr>
+                ))
+                }
+    {/*<h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>*/}
+  </div>
+</div>
 
 
 
