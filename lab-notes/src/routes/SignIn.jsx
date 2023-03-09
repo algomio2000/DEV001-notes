@@ -23,43 +23,37 @@ export default function SingIn() {
 
   return (
     <div className="contenedor">
-      <div className="container1">
-        <div className="encabezado">
-          <img
-            className="logo"
-            src={logo}
-            alt="calendarDay" />
-             </div>
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div className="container1">
+          <div style={{ height: '50px'  }}>
+            <div className="encabezado">
+              <img
+                className="logo"
+                src={logo}
+                alt="calendarDay" />
+            </div>
             <div className="title">
-            <h1>ORGANIZE ME</h1>
-          
-        </div>
-       
-        
-        <div className="subtitle" >
-          <h2 >Organizate para cumplir tus sueños</h2>
+              <h1>ORGANIZE ME</h1>
+            </div>
+            <h1>BIENVENIDO</h1>
+            <h2>Inicia sesion</h2>
+
+            <button className="btn" onClick={handleOnClick}>
+
+              <img
+                className="googleIcon"
+                src={google}
+                alt="google logo"
+              />
+            </button>
+          </div>
+
         </div>
       </div>
-      <div className="container2">
-        <h1>BIENVENIDO</h1>
-        <h2>Inicia sesion</h2>
-       
-        <button className="btn" onClick={handleOnClick}>
-
-          <img
-            className="googleIcon"
-            src={google}
-            alt="google logo"
-          />
-        </button>
 
 
-      </div>
+
     </div>
-
-
-
-
 
   );
 };
